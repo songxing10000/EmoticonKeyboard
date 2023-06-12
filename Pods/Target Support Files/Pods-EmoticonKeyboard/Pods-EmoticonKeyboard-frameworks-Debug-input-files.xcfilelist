@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-EmoticonKeyboard/Pods-EmoticonKeyboard-frameworks.sh
+${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftHEXColors/SwiftHEXColors.framework

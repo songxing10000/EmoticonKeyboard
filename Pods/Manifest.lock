@@ -1,0 +1,24 @@
+PODS:
+  - GrowingTextView (0.7.2)
+  - SnapKit (5.6.0)
+  - SwiftHEXColors (1.4.1)
+
+DEPENDENCIES:
+  - GrowingTextView
+  - SnapKit
+  - SwiftHEXColors
+
+SPEC REPOS:
+  trunk:
+    - GrowingTextView
+    - SnapKit
+    - SwiftHEXColors
+
+SPEC CHECKSUMS:
+  GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftHEXColors: 1cb6e5d55c52749aa33db8f088ac55eb71ca4c7f
+
+PODFILE CHECKSUM: b3286c5e92cc401241fe034931537d25d8687689
+
+COCOAPODS: 1.12.1

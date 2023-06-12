@@ -1,0 +1,97 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+
+inhibit_all_warnings!
+
+install! 'cocoapods',
+:generate_multiple_pod_projects => true,
+:incremental_installation => true,
+:warn_for_unused_master_specs_repo => false
+
+target 'NewProjTest' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks! :linkage => :static
+  
+#  pod 'libpag'
+  pod 'Moya', '~> 15.0'
+  pod 'MBProgressHUD'
+  pod 'CYLTabBarController'
+  pod 'Reusable'
+  
+  pod 'SnapKit'
+  pod 'SwiftHEXColors'
+  pod 'Kingfisher', '~> 7.0'
+  pod 'MJRefresh'
+  pod 'EmptyDataSet-Swift'
+  pod 'GrowingTextView', '0.7.2'
+  pod 'JXSegmentedView'
+  pod 'PKHUD', '~> 5.3.0'
+  pod 'IQKeyboardManagerSwift'
+ 
+#  pod 'HandyJSON'
+#  pod 'KakaJSON'
+  pod 'Masonry'
+#  pod 'SVGAPlayer'
+  
+  pod 'CHTCollectionViewWaterfallLayout'
+  pod 'SKJavaScriptBridge', '~> 1.0.3'
+  pod 'Charts'
+  pod 'SwiftTimer'
+  pod 'FDFullscreenPopGesture'
+  pod 'Toast-Swift'
+  pod 'ActionSheetPicker-3.0'
+  pod 'FSCalendar'
+  pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
+  pod 'FSPagerView'
+  #pod 'UITextView+Placeholder'
+  pod 'TZImagePickerController/Basic'
+  libraries = [
+  { :name => 'MyTools' },
+  { :name => 'BHBPopView' },
+  { :name => 'KxMenu' },
+#  { :name => 'TXIMSDK_TUIKit_iOS_Professional' },
+  { :name => 'ProgressWebViewController' },
+  { :name => 'XInjectionIII' },
+#  { :name => 'SXShareSDKLib' },
+  ]
+  path_prefix = '../'
+  git_prefix = 'git@gitee.com:songxing10000/'
+  
+  libraries.each do |library|
+    path = "#{path_prefix}#{library[:name]}"
+    git = "#{git_prefix}#{library[:name]}.git"
+    if File.exist?(path)
+      pod library[:name], :path => path
+    else
+      pod library[:name], :git => git
+    end
+  end
+  
+  
+  
+end
+
+#Pods config
+#Fix Xcode14 Bundle target error
+
+#post_install do |installer|
+#    installer.pods_project.targets.each do |target|
+#        target.build_configurations.each do |config|
+#            config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+#            config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+#            config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+#        end
+#    end
+#end
+
+
+#fix bug in Xcode 14
+#post_install do |installer|
+#  installer.pods_project.targets.each do |target|
+#    if target.name == 'RSKPlaceholderTextView'
+#      target.build_configurations.each do |config|
+#        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+#      end
+#    end
+#  end
+#end
